@@ -410,7 +410,7 @@
           isShaking = false;
           // Show burst and message (original logic)
           const burst = document.getElementById('giftBurst');
-          if (burst) { burst.textContent = '🩵💚'; burst.classList.add('show'); }
+          if (burst) { burst.textContent = '💙💚'; burst.classList.add('show'); }
           setTimeout(() => {
             const m = typeof giftMessages !== 'undefined'
               ? giftMessages[Math.floor(Math.random() * giftMessages.length)]
