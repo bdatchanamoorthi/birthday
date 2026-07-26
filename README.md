@@ -32,4 +32,4 @@
 - URL param support (share pre-filled link)
 
 ## Credit
-Powered by @Just.rahul.dev
+Powered by @bdatchanamoorthi
