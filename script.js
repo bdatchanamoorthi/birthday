@@ -256,38 +256,12 @@ function showToast(msg) {
 
 // ─── DOM Ready ───────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
-  const params = new URLSearchParams(window.location.search);
-  const urlName = params.get('name');
-  const urlDOB  = params.get('dob');
-
-  if (urlName && urlDOB) {
-    personName = urlName;
-    personDOB  = urlDOB;
-    personAge  = calculateAge(urlDOB);
-    launchMainPage();
-    return;
-  }
-
-  const sName = sessionStorage.getItem('bdayName');
-  const sDOB  = sessionStorage.getItem('bdayDOB');
-  if (sName && sDOB) {
-    personName = sName;
-    personDOB  = sDOB;
-    personAge  = calculateAge(sDOB);
-    launchMainPage();
-    return;
-  }
-
-  document.getElementById('onboarding').classList.add('active');
-
-  document.getElementById('inputName')?.addEventListener('keydown', e => { 
-    if (e.key === 'Enter') document.getElementById('inputDOB').focus(); 
-  });
-  document.getElementById('inputDOB')?.addEventListener('keydown', e => { 
-    if (e.key === 'Enter') startWishing(); 
-  });
+  // 🔒 Dedicated page — always shows this person, no form needed
+  personName = "Asmath";
+  personDOB  = "2006-08-26";       // format: YYYY-MM-DD
+  personAge  = calculateAge(personDOB);
+  launchMainPage();
 });
-
 // ─── Confetti ────────────────────────────────────────────
 function launchEntryConfetti() {
   if (typeof launchConfetti === 'function') {
